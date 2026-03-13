@@ -224,9 +224,32 @@
     .sz-gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .sz-gal-item{border-radius:8px;overflow:hidden;border:1px solid var(--bdr);background:var(--bg2);transition:border-color .2s,transform .2s}
     .sz-gal-item:hover{border-color:var(--bdr2);transform:translateY(-2px)}
-    .sz-gal-item img{width:100%;height:200px;object-fit:cover;object-position:center top;display:block;filter:brightness(.9)}
-    .sz-gal-item:first-child img{object-position:center 15%}
+    .sz-gal-item img{width:100%;height:260px;object-fit:cover;object-position:center top;display:block;filter:brightness(.9)}
+    .sz-gal-item:first-child img{height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 20%}
     .sz-gal-cap{font-size:11px;color:var(--txt2);padding:8px 12px;background:var(--bg2)}
+
+    /* SZ OST PLAYER */
+    .sz-ost{border-top:1px solid var(--bdr);padding-top:24px;margin-top:24px}
+    .sz-ost-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sz-track{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;overflow:hidden;transition:border-color .2s}
+    .sz-track:hover{border-color:var(--bdr2)}
+    .sz-track-art{position:relative;overflow:hidden}
+    .sz-track-art img{width:100%;height:180px;object-fit:cover;object-position:center;display:block;filter:brightness(.75);transition:filter .3s}
+    .sz-track:hover .sz-track-art img{filter:brightness(.9)}
+    .sz-track-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,9,15,.9) 0%,transparent 60%);display:flex;align-items:flex-end;padding:14px 16px}
+    .sz-track-tag{font-family:var(--syne);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);background:rgba(0,200,255,.12);border:1px solid rgba(0,200,255,.2);padding:3px 8px;border-radius:100px}
+    .sz-track-body{padding:14px 16px 16px}
+    .sz-track-title{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--txt);margin-bottom:3px}
+    .sz-track-sub{font-size:11px;color:var(--txt3);margin-bottom:12px}
+    .sz-player{display:flex;align-items:center;gap:10px}
+    .sz-play-btn{width:34px;height:34px;border-radius:50%;background:var(--cyan);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .2s,transform .2s}
+    .sz-play-btn:hover{opacity:.85;transform:scale(1.08)}
+    .sz-play-btn svg{margin-left:2px}
+    .sz-progress-wrap{flex:1;display:flex;flex-direction:column;gap:5px}
+    .sz-progress{width:100%;height:3px;background:var(--bg4);border-radius:2px;cursor:pointer;position:relative;overflow:hidden}
+    .sz-progress-bar{height:100%;background:var(--cyan);border-radius:2px;width:0%;transition:width .1s linear;pointer-events:none}
+    .sz-time{font-size:10px;color:var(--txt3);font-variant-numeric:tabular-nums}
+    @media(max-width:600px){.sz-ost-grid{grid-template-columns:1fr}}
 
     /* SPEAKING */
     .speaking-bg{background:var(--bg0)}
@@ -589,12 +612,76 @@
         </div>
         <div class="sz-gal-item">
           <img src="card_concept.png" alt="Subscriber Zero card system, Figma design mockup" />
-          <div class="sz-gal-cap">Card System · 27 Cards · Korean UI</div>
+          <div class="sz-gal-cap">Card System · 27 Cards · Localized UI</div>
         </div>
         <div class="sz-gal-item">
           <img src="concept_artworks.png" alt="Subscriber Zero character A/B concept testing in Figma, Midjourney" />
           <div class="sz-gal-cap">Design Process · Figma A/B Concept Testing</div>
         </div>
+      </div>
+    </div>
+
+    <!-- SZ OST -->
+    <div class="sz-ost reveal">
+      <div class="sz-gal-label">Original Soundtrack · AI-Assisted Composition</div>
+      <div class="sz-ost-grid">
+
+        <!-- Track 1: Main Menu -->
+        <div class="sz-track">
+          <div class="sz-track-art">
+            <img src="main_menu.png" alt="Subscriber Zero main menu artwork" />
+            <div class="sz-track-overlay">
+              <span class="sz-track-tag">Main Menu BGM</span>
+            </div>
+          </div>
+          <div class="sz-track-body">
+            <div class="sz-track-title">Main Theme</div>
+            <div class="sz-track-sub">Subscriber Zero OST · Suno AI + Audacity</div>
+            <div class="sz-player">
+              <button class="sz-play-btn" onclick="toggleTrack('track1')" id="btn-track1" aria-label="Play">
+                <svg id="icon-track1" width="12" height="14" viewBox="0 0 12 14" fill="none">
+                  <path d="M1 1l10 6-10 6V1z" fill="#07090F"/>
+                </svg>
+              </button>
+              <div class="sz-progress-wrap">
+                <div class="sz-progress" onclick="seekTrack('track1', event)">
+                  <div class="sz-progress-bar" id="bar-track1"></div>
+                </div>
+                <span class="sz-time" id="time-track1">0:00 / 0:00</span>
+              </div>
+            </div>
+            <audio id="track1" src="main_menu.mp3" preload="none"></audio>
+          </div>
+        </div>
+
+        <!-- Track 2: Parasite Queen -->
+        <div class="sz-track">
+          <div class="sz-track-art">
+            <img src="zone2_elite_parasite_queen.png" alt="Zone 2 Elite: Parasite Queen enemy concept art" style="object-position:center 20%" />
+            <div class="sz-track-overlay">
+              <span class="sz-track-tag">Zone 2 · Elite Battle</span>
+            </div>
+          </div>
+          <div class="sz-track-body">
+            <div class="sz-track-title">Parasite Queen</div>
+            <div class="sz-track-sub">Subscriber Zero OST · Suno AI + Audacity</div>
+            <div class="sz-player">
+              <button class="sz-play-btn" onclick="toggleTrack('track2')" id="btn-track2" aria-label="Play">
+                <svg id="icon-track2" width="12" height="14" viewBox="0 0 12 14" fill="none">
+                  <path d="M1 1l10 6-10 6V1z" fill="#07090F"/>
+                </svg>
+              </button>
+              <div class="sz-progress-wrap">
+                <div class="sz-progress" onclick="seekTrack('track2', event)">
+                  <div class="sz-progress-bar" id="bar-track2"></div>
+                </div>
+                <span class="sz-time" id="time-track2">0:00 / 0:00</span>
+              </div>
+            </div>
+            <audio id="track2" src="zone2_elite_parasite_queen.mp3" preload="none"></audio>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -752,23 +839,80 @@
 </div>
 
 <script>
-  const ham = document.getElementById('ham');
-  const mob = document.getElementById('mob');
+  var ham = document.getElementById('ham');
+  var mob = document.getElementById('mob');
   ham.addEventListener('click', function() { mob.classList.toggle('open'); });
   function closeMob() { mob.classList.remove('open'); }
 
   var revealEls = document.querySelectorAll('.reveal');
-
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
   revealEls.forEach(function(el) { obs.observe(el); });
-
   setTimeout(function() {
     revealEls.forEach(function(el) { el.classList.add('vis'); });
   }, 800);
+
+  // Audio player
+  var currentTrack = null;
+  var pauseIcon = '<rect x="2" y="1" width="3" height="12" rx="1" fill="#07090F"/><rect x="7" y="1" width="3" height="12" rx="1" fill="#07090F"/>';
+  var playIcon = '<path d="M1 1l10 6-10 6V1z" fill="#07090F"/>';
+
+  function formatTime(s) {
+    if (isNaN(s)) return '0:00';
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function toggleTrack(id) {
+    var audio = document.getElementById(id);
+    var icon = document.getElementById('icon-' + id);
+    if (currentTrack && currentTrack !== audio) {
+      currentTrack.pause();
+      currentTrack.currentTime = 0;
+      var otherId = currentTrack.id;
+      document.getElementById('icon-' + otherId).innerHTML = playIcon;
+      document.getElementById('bar-' + otherId).style.width = '0%';
+    }
+    if (audio.paused) {
+      audio.play();
+      currentTrack = audio;
+      icon.innerHTML = pauseIcon;
+    } else {
+      audio.pause();
+      icon.innerHTML = playIcon;
+    }
+  }
+
+  function seekTrack(id, e) {
+    var audio = document.getElementById(id);
+    var bar = e.currentTarget;
+    var ratio = e.offsetX / bar.offsetWidth;
+    if (audio.duration) { audio.currentTime = ratio * audio.duration; }
+  }
+
+  ['track1', 'track2'].forEach(function(id) {
+    var audio = document.getElementById(id);
+    if (!audio) return;
+    audio.addEventListener('timeupdate', function() {
+      var pct = audio.duration ? (audio.currentTime / audio.duration * 100) : 0;
+      document.getElementById('bar-' + id).style.width = pct + '%';
+      document.getElementById('time-' + id).textContent =
+        formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', function() {
+      document.getElementById('icon-' + id).innerHTML = playIcon;
+      document.getElementById('bar-' + id).style.width = '0%';
+      currentTrack = null;
+    });
+    audio.addEventListener('loadedmetadata', function() {
+      document.getElementById('time-' + id).textContent =
+        '0:00 / ' + formatTime(audio.duration);
+    });
+  });
 </script>
 </body>
 </html>
