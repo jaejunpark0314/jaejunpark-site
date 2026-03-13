@@ -24,7 +24,7 @@
   <meta name="twitter:image"       content="https://jaejunpark.com/headshot.JPG" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg0:#07090F; --bg1:#0C1018; --bg2:#111622; --bg3:#18202E; --bg4:#1E2840;
@@ -32,7 +32,7 @@
       --txt:#DDE2EE; --txt2:#7A89A8; --txt3:#3E4F6E;
       --cyan:#00C8FF; --cyan2:rgba(0,200,255,0.08);
       --gold:#F5A623; --gold2:rgba(245,166,35,0.12);
-      --syne:'Syne',sans-serif; --body:'Manrope',sans-serif; --r:8px;
+      --syne:'Space Grotesk',sans-serif; --body:'Manrope',sans-serif; --r:8px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:16px}
@@ -246,8 +246,8 @@
     .sz-play-btn:hover{opacity:.85;transform:scale(1.08)}
     .sz-play-btn svg{margin-left:2px}
     .sz-progress-wrap{flex:1;display:flex;flex-direction:column;gap:5px}
-    .sz-progress{width:100%;height:3px;background:var(--bg4);border-radius:2px;cursor:pointer;position:relative;overflow:hidden}
-    .sz-progress-bar{height:100%;background:var(--cyan);border-radius:2px;width:0%;transition:width .1s linear;pointer-events:none}
+    .sz-progress{width:100%;height:6px;background:var(--bg4);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;transition:height .15s}
+    .sz-progress-bar{height:100%;background:var(--cyan);border-radius:3px;width:0%;transition:width .1s linear;pointer-events:none}
     .sz-time{font-size:10px;color:var(--txt3);font-variant-numeric:tabular-nums}
     @media(max-width:600px){.sz-ost-grid{grid-template-columns:1fr}}
 
@@ -644,7 +644,7 @@
                 </svg>
               </button>
               <div class="sz-progress-wrap">
-                <div class="sz-progress" onclick="seekTrack('track1', event)">
+                <div class="sz-progress" data-track="track1" onclick="seekTrack('track1', event)" style="cursor:pointer">
                   <div class="sz-progress-bar" id="bar-track1"></div>
                 </div>
                 <span class="sz-time" id="time-track1">0:00 / 0:00</span>
@@ -672,7 +672,7 @@
                 </svg>
               </button>
               <div class="sz-progress-wrap">
-                <div class="sz-progress" onclick="seekTrack('track2', event)">
+                <div class="sz-progress" data-track="track2" onclick="seekTrack('track2', event)" style="cursor:pointer">
                   <div class="sz-progress-bar" id="bar-track2"></div>
                 </div>
                 <span class="sz-time" id="time-track2">0:00 / 0:00</span>
@@ -855,7 +855,6 @@
     revealEls.forEach(function(el) { el.classList.add('vis'); });
   }, 800);
 
-  // Audio player
   var currentTrack = null;
   var pauseIcon = '<rect x="2" y="1" width="3" height="12" rx="1" fill="#07090F"/><rect x="7" y="1" width="3" height="12" rx="1" fill="#07090F"/>';
   var playIcon = '<path d="M1 1l10 6-10 6V1z" fill="#07090F"/>';
@@ -887,12 +886,47 @@
     }
   }
 
+  function getSeekRatio(bar, e) {
+    var rect = bar.getBoundingClientRect();
+    var x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+    return Math.max(0, Math.min(1, x / rect.width));
+  }
+
   function seekTrack(id, e) {
     var audio = document.getElementById(id);
     var bar = e.currentTarget;
-    var ratio = e.offsetX / bar.offsetWidth;
+    var ratio = getSeekRatio(bar, e);
     if (audio.duration) { audio.currentTime = ratio * audio.duration; }
   }
+
+  // Drag-to-seek
+  var dragging = null;
+  document.querySelectorAll('.sz-progress').forEach(function(bar) {
+    var id = bar.getAttribute('data-track');
+
+    function startDrag(e) {
+      e.preventDefault();
+      dragging = id;
+      var audio = document.getElementById(id);
+      var ratio = getSeekRatio(bar, e.touches ? e.touches[0] : e);
+      if (audio.duration) { audio.currentTime = ratio * audio.duration; }
+    }
+    function onDrag(e) {
+      if (dragging !== id) return;
+      e.preventDefault();
+      var audio = document.getElementById(id);
+      var ratio = getSeekRatio(bar, e.touches ? e.touches[0] : e);
+      if (audio.duration) { audio.currentTime = ratio * audio.duration; }
+    }
+    function endDrag() { dragging = null; }
+
+    bar.addEventListener('mousedown', startDrag);
+    bar.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('mousemove', onDrag);
+    document.addEventListener('touchmove', onDrag, { passive: false });
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchend', endDrag);
+  });
 
   ['track1', 'track2'].forEach(function(id) {
     var audio = document.getElementById(id);
