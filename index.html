@@ -764,9 +764,9 @@
         <div class="sec-label" style="margin-bottom:12px">06 / Contact</div>
         <h2 class="contact-h2">Let's work<br><span>together.</span></h2>
         <p class="contact-sub">Hiring a Sr. PMM or Brand Manager? Interested in the Korean gaming market? Want to discuss a collaboration? I'd like to hear from you.</p>
-        <a href="/cdn-cgi/l/email-protection#157f74707f607b6574677e25262421557278747c793b767a78" class="clink">
+        <a href="mailto:jaejunpark0314@gmail.com" class="clink">
           <div class="clink-ic">✉</div>
-          <div class="clink-info"><div class="clink-lbl">Email</div><div class="clink-val"><span class="__cf_email__" data-cfemail="6208030708170c120310095251535622050f030b0e4c010d0f">[email&#160;protected]</span></div></div>
+          <div class="clink-info"><div class="clink-lbl">Email</div><div class="clink-val">jaejunpark0314@gmail.com</div></div>
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="https://linkedin.com/in/jjpark1" target="_blank" class="clink">
@@ -838,7 +838,7 @@
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   var ham = document.getElementById('ham');
   var mob = document.getElementById('mob');
   ham.addEventListener('click', function() { mob.classList.toggle('open'); });
@@ -894,16 +894,13 @@
 
   function seekTrack(id, e) {
     var audio = document.getElementById(id);
-    var bar = e.currentTarget;
-    var ratio = getSeekRatio(bar, e);
+    var ratio = getSeekRatio(e.currentTarget, e);
     if (audio.duration) { audio.currentTime = ratio * audio.duration; }
   }
 
-  // Drag-to-seek
   var dragging = null;
   document.querySelectorAll('.sz-progress').forEach(function(bar) {
     var id = bar.getAttribute('data-track');
-
     function startDrag(e) {
       e.preventDefault();
       dragging = id;
@@ -919,7 +916,6 @@
       if (audio.duration) { audio.currentTime = ratio * audio.duration; }
     }
     function endDrag() { dragging = null; }
-
     bar.addEventListener('mousedown', startDrag);
     bar.addEventListener('touchstart', startDrag, { passive: false });
     document.addEventListener('mousemove', onDrag);
@@ -939,4 +935,14 @@
     });
     audio.addEventListener('ended', function() {
       document.getElementById('icon-' + id).innerHTML = playIcon;
-      document.getElementById('bar-' + id).style
+      document.getElementById('bar-' + id).style.width = '0%';
+      currentTrack = null;
+    });
+    audio.addEventListener('loadedmetadata', function() {
+      document.getElementById('time-' + id).textContent =
+        '0:00 / ' + formatTime(audio.duration);
+    });
+  });
+</script>
+</body>
+</html>
