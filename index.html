@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JJ Park | Sr. Product Marketing Manager | Game Industry</title>
+  <meta name="description" content="JJ Park — Sr. PMM with 10+ AAA launches at 2K. Founding VP of Marketing, Korea at Blitz Inc. Bilingual US/Korea. GamesForum SF 2025 Speaker. Founder, Park-Deomes Studios." />
+  <link rel="canonical" href="https://jaejunpark.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://jaejunpark.com/" />
+  <meta property="og:title"       content="JJ Park | Sr. PMM | AAA Game Marketing" />
+  <meta property="og:description" content="10+ AAA launches. 3M+ users scaled. Two continents. Sr. PMM open to work — ex-2K Games, Blitz Inc. Now building an indie game." />
+  <meta property="og:image"       content="https://jaejunpark.com/headshot.JPG" />
+  <meta property="og:site_name"   content="JJ Park Portfolio" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://jaejunpark.com/" />
+  <meta name="twitter:title"       content="JJ Park | Sr. PMM | AAA Game Marketing" />
+  <meta name="twitter:description" content="10+ AAA launches. 3M+ users scaled. Two continents. Sr. PMM open to work — ex-2K Games, Blitz Inc." />
+  <meta name="twitter:image"       content="https://jaejunpark.com/headshot.JPG" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg0:#07090F; --bg1:#0C1018; --bg2:#111622; --bg3:#18202E; --bg4:#1E2840;
+      --bdr:#1E2A3F; --bdr2:#2A3A56;
+      --txt:#DDE2EE; --txt2:#7A89A8; --txt3:#3E4F6E;
+      --cyan:#00C8FF; --cyan2:rgba(0,200,255,0.08);
+      --gold:#F5A623; --gold2:rgba(245,166,35,0.12);
+      --syne:'Syne',sans-serif; --body:'Manrope',sans-serif; --r:8px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--body);background:var(--bg0);color:var(--txt);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.vis{opacity:1;transform:none}
+    .reveal-d1{transition-delay:.12s}.reveal-d2{transition-delay:.24s}.reveal-d3{transition-delay:.36s}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:200;background:rgba(7,9,15,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{height:30px;width:auto;opacity:.95}
+    .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+    .nav-links a{font-size:13px;font-weight:500;color:var(--txt2);padding:7px 14px;border-radius:var(--r);transition:color .2s,background .2s}
+    .nav-links a:hover{color:var(--txt);background:var(--bg3)}
+    .nav-cta{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--bg0);background:var(--cyan);padding:9px 20px;border-radius:var(--r);letter-spacing:.02em;transition:opacity .2s,transform .2s,box-shadow .2s}
+    .nav-cta:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,200,255,.3)}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px}
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--bg1);border-bottom:1px solid var(--bdr);padding:10px 20px 18px;z-index:190}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;font-size:15px;color:var(--txt2);padding:12px 8px;border-bottom:1px solid var(--bdr)}
+    .mobile-menu a:last-child{border:none}
+    .mobile-menu a:hover{color:var(--cyan)}
+
+    /* HERO */
+    .hero-wrap{position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-200px;left:-100px;width:700px;height:700px;background:radial-gradient(ellipse,rgba(0,200,255,.06) 0%,transparent 65%);pointer-events:none}
+    .hero-glow-r{position:absolute;top:0;right:-150px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(245,166,35,.04) 0%,transparent 65%);pointer-events:none}
+    .hero{max-width:1240px;margin:0 auto;padding:88px 48px 100px;display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center;position:relative}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,200,255,.25);padding:5px 14px;border-radius:100px;margin-bottom:28px;animation:fadeUp .6s ease both}
+    .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite}
+    .hero-h1{font-family:var(--syne);font-size:clamp(42px,5.5vw,72px);font-weight:800;line-height:1.04;letter-spacing:-.02em;color:var(--txt);margin-bottom:10px;animation:fadeUp .7s ease .08s both}
+    .hero-h1 .ac{color:var(--cyan)}.hero-h1 .ag{color:var(--gold)}
+    .hero-subhead{font-family:var(--syne);font-size:clamp(15px,1.8vw,20px);font-weight:600;color:var(--txt2);margin-bottom:22px;animation:fadeUp .7s ease .14s both;line-height:1.4}
+    .hero-desc{font-size:15px;font-weight:300;line-height:1.85;color:var(--txt2);max-width:520px;margin-bottom:36px;animation:fadeUp .7s ease .2s both}
+    .hero-desc strong{color:var(--txt);font-weight:500}
+    .hero-stats{display:flex;gap:32px;margin-bottom:40px;animation:fadeUp .7s ease .26s both}
+    .hstat-n{font-family:var(--syne);font-size:30px;font-weight:800;color:var(--txt);line-height:1}
+    .hstat-n span{color:var(--cyan)}
+    .hstat-l{font-size:11px;color:var(--txt2);margin-top:3px;letter-spacing:.02em}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s ease .32s both}
+    .btn-primary{font-family:var(--syne);font-size:14px;font-weight:700;background:var(--cyan);color:var(--bg0);padding:13px 28px;border-radius:var(--r);letter-spacing:.02em;transition:opacity .2s,transform .2s,box-shadow .2s}
+    .btn-primary:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,200,255,.28)}
+    .btn-ghost{font-size:14px;font-weight:500;color:var(--txt2);padding:12px 24px;border-radius:var(--r);border:1px solid var(--bdr2);display:flex;align-items:center;gap:8px;transition:border-color .2s,color .2s,transform .2s}
+    .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+
+    /* HERO CARD */
+    .hero-card{background:var(--bg2);border:1px solid var(--bdr2);border-radius:12px;overflow:hidden;animation:fadeUp .8s ease .38s both;box-shadow:0 0 60px rgba(0,200,255,.05)}
+    .hcard-top{background:linear-gradient(135deg,#0D1A36,#091428);padding:26px 24px;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden}
+    .hcard-badge{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold2);border:1px solid rgba(245,166,35,.2);padding:4px 10px;border-radius:100px;display:inline-block;margin-bottom:12px}
+    .hcard-title{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--txt);margin-bottom:3px}
+    .hcard-role{font-size:12px;color:var(--txt2)}
+    .hcard-body{padding:18px 24px}
+    .hcard-games{display:flex;flex-direction:column;gap:9px}
+    .hgame{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:10px 13px;transition:border-color .2s}
+    .hgame:hover{border-color:var(--bdr2)}
+    .hgame-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+    .hgame-info{flex:1}
+    .hgame-name{font-size:12px;font-weight:600;color:var(--txt)}
+    .hgame-role{font-size:11px;color:var(--txt2);margin-top:1px}
+    .hgame-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txt3)}
+    .hcard-metric-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--bdr);margin-top:4px}
+    .hm{padding:12px 8px;text-align:center;border-right:1px solid var(--bdr)}
+    .hm:last-child{border:none}
+    .hm-n{font-family:var(--syne);font-size:18px;font-weight:800;color:var(--cyan);line-height:1}
+    .hm-l{font-size:10px;color:var(--txt2);margin-top:3px;letter-spacing:.02em}
+    .hcard-footer{border-top:1px solid var(--bdr);padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+    .hf-label{font-size:11px;color:var(--txt2)}
+    .hf-open{font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:6px}
+    .hf-open::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite}
+
+    /* TICKER */
+    .ticker{background:var(--bg2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:13px 0;overflow:hidden}
+    .ticker-track{display:flex;animation:ticker 30s linear infinite;white-space:nowrap}
+    .t-item{font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);padding:0 28px;display:inline-flex;align-items:center;gap:10px;flex-shrink:0}
+    .t-item::after{content:'·';color:var(--cyan);font-size:18px;line-height:1}
+
+    /* SECTIONS */
+    .section{max-width:1240px;margin:0 auto;padding:100px 48px}
+    .sec-label{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
+    .sec-h2{font-family:var(--syne);font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.07;color:var(--txt)}
+    .sec-h2 em{font-style:normal;color:var(--txt3)}
+    .sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px}
+
+    /* GAMES SHIPPED */
+    .shipped-bg{background:var(--bg1);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+    .shipped-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .game-tile{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;overflow:hidden;transition:border-color .22s,transform .22s,box-shadow .22s}
+    .game-tile:hover{border-color:var(--bdr2);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+    .game-vis{height:118px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .gv-civ{background:linear-gradient(135deg,#1A0A00,#3D1F00);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gv-nba{background:linear-gradient(135deg,#06001A,#1A0033);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gv-ms{background:linear-gradient(135deg,#000A18,#001A36);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gv-blitz{background:linear-gradient(135deg,#000F08,#001F10);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gv-ss{background:linear-gradient(135deg,#1A0010,#3D0024);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gv-sz{background:linear-gradient(135deg,#000A1A,#001833);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .gvis-title{font-family:var(--syne);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center;padding:0 12px;line-height:1.5}
+    .game-body{padding:13px 15px 15px}
+    .game-title{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--txt);margin-bottom:3px}
+    .game-meta{font-size:11px;color:var(--txt2)}
+    .game-role-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:100px;margin-top:7px}
+    .tag-pmm{color:var(--cyan);background:var(--cyan2);border:1px solid rgba(0,200,255,.2)}
+    .tag-vp{color:var(--gold);background:var(--gold2);border:1px solid rgba(245,166,35,.2)}
+    .tag-founder{color:#A78BFA;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2)}
+
+    /* METRICS BAR */
+    .metrics-bg{background:var(--bg0);border-bottom:1px solid var(--bdr)}
+    .metrics-row{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid var(--bdr)}
+    .metric-box{padding:28px 24px;border-right:1px solid var(--bdr);border-bottom:1px solid var(--bdr);transition:background .2s}
+    .metric-box:hover{background:var(--bg2)}
+    .metric-n{font-family:var(--syne);font-size:28px;font-weight:800;color:var(--txt);line-height:1;margin-bottom:6px}
+    .metric-n span{color:var(--cyan)}
+    .metric-l{font-size:12px;color:var(--txt2);line-height:1.45}
+    .metric-src{font-size:10px;color:var(--txt3);margin-top:4px;letter-spacing:.04em}
+
+    /* ABOUT */
+    .about-bg{background:var(--bg0)}
+    .about-grid{display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:start}
+    .about-left{position:sticky;top:88px}
+    .about-photo{width:100%;aspect-ratio:1;border-radius:12px;overflow:hidden;border:1px solid var(--bdr);margin-bottom:22px;background:var(--bg3)}
+    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-h2{font-family:var(--syne);font-size:26px;font-weight:800;color:var(--txt);margin-bottom:8px}
+    .about-role{font-size:14px;color:var(--txt2);margin-bottom:20px}
+    .key-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .kstat{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:14px}
+    .kstat-n{font-family:var(--syne);font-size:22px;font-weight:800;color:var(--txt);line-height:1}
+    .kstat-n span{color:var(--cyan)}
+    .kstat-l{font-size:11px;color:var(--txt2);margin-top:4px}
+    .chapters{display:flex;flex-direction:column}
+    .chapter{padding:28px 0;border-bottom:1px solid var(--bdr);display:grid;grid-template-columns:68px 1fr;gap:22px;align-items:start}
+    .chapter:last-child{border-bottom:none}
+    .ch-num{font-family:var(--syne);font-size:38px;font-weight:800;color:var(--bg3);line-height:1;user-select:none}
+    .ch-period{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);margin-bottom:6px}
+    .ch-title{font-family:var(--syne);font-size:16px;font-weight:700;color:var(--txt);margin-bottom:8px}
+    .ch-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--txt2)}
+    .ch-desc strong{color:var(--txt);font-weight:500}
+    .ch-metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .ch-tag{font-size:11px;color:var(--cyan);background:var(--cyan2);border:1px solid rgba(0,200,255,.18);padding:4px 12px;border-radius:100px}
+    .ch-tag-g{font-size:11px;color:var(--gold);background:var(--gold2);border:1px solid rgba(245,166,35,.18);padding:4px 12px;border-radius:100px}
+
+    /* CASE STUDIES */
+    .cases-bg{background:var(--bg1);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+    .case-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:16px}
+    .case-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .22s,transform .22s,box-shadow .22s}
+    .case-card:not(.dim):hover{border-color:var(--bdr2);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.25)}
+    .case-card.featured{grid-row:span 2}
+    .case-card.dim{opacity:.4;pointer-events:none}
+    .case-vis{height:200px;overflow:hidden;flex-shrink:0}
+    .case-card.featured .case-vis{height:240px}
+    .cv-sz{width:100%;height:100%;background:linear-gradient(135deg,#050D1F,#0A1830 40%,#0D2050);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .cv-sz::before{content:'SZ';position:absolute;font-family:var(--syne);font-weight:800;font-size:160px;color:rgba(0,200,255,.04);pointer-events:none;letter-spacing:-8px}
+    .cv-sz-inner{text-align:center;position:relative}
+    .cv-sz-t{font-family:var(--syne);font-weight:800;font-size:18px;color:rgba(255,255,255,.85);margin-bottom:5px;letter-spacing:.04em}
+    .cv-sz-s{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+    .cv-nda{width:100%;height:100%;background:linear-gradient(135deg,#0A0A00,#1A1400);display:flex;align-items:center;justify-content:center}
+    .cv-nda-inner{text-align:center}
+    .cv-nda-lock{font-size:24px;margin-bottom:8px;opacity:.35}
+    .cv-nda-t{font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2)}
+    .cv-blitz{width:100%;height:100%;background:linear-gradient(135deg,#001008,#002018);display:flex;align-items:center;justify-content:center}
+    .cv-blitz-t{font-family:var(--syne);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,200,100,.6)}
+    .cv-soon{width:100%;height:100%;background:linear-gradient(135deg,#0A0014,#1A0028);display:flex;align-items:center;justify-content:center}
+    .cv-soon-t{font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3)}
+    .case-body{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column}
+    .case-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+    .case-type{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+    .case-sep{width:3px;height:3px;background:var(--bg4);border-radius:50%}
+    .case-date{font-size:11px;color:var(--txt2)}
+    .soon-pill{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--txt3);background:var(--bg3);border:1px solid var(--bdr);padding:3px 9px;border-radius:100px}
+    .case-h3{font-family:var(--syne);font-weight:700;font-size:16px;line-height:1.3;color:var(--txt);margin-bottom:10px}
+    .case-card.featured .case-h3{font-size:20px}
+    .case-desc{font-size:14px;font-weight:300;color:var(--txt2);line-height:1.75;flex:1;margin-bottom:18px}
+    .case-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--bdr)}
+    .case-tags{display:flex;gap:5px;flex-wrap:wrap}
+    .ctag{font-size:11px;color:var(--txt2);background:var(--bg3);border:1px solid var(--bdr);padding:3px 10px;border-radius:100px}
+    .arr{width:28px;height:28px;border-radius:50%;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s}
+    .case-card:not(.dim):hover .arr{background:var(--cyan);border-color:var(--cyan)}
+    .case-card:not(.dim):hover .arr svg path{stroke:var(--bg0)}
+
+    /* SZ DEV GALLERY */
+    .sz-gallery{border-top:1px solid var(--bdr);padding-top:20px}
+    .sz-gal-label{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);margin-bottom:14px}
+    .sz-gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .sz-gal-item{border-radius:8px;overflow:hidden;border:1px solid var(--bdr);background:var(--bg2);transition:border-color .2s,transform .2s}
+    .sz-gal-item:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+    .sz-gal-item img{width:100%;height:160px;object-fit:cover;object-position:center top;display:block;filter:brightness(.9)}
+    .sz-gal-cap{font-size:11px;color:var(--txt2);padding:8px 12px;background:var(--bg2)}
+
+    /* SPEAKING */
+    .speaking-bg{background:var(--bg0)}
+    .speak-main{border-radius:12px;overflow:hidden;border:1px solid var(--bdr2);position:relative}
+    .speak-photo{width:100%;height:340px;object-fit:cover;object-position:center 30%;display:block;filter:brightness(.75)}
+    .speak-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,9,15,.95) 0%,rgba(7,9,15,.4) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:36px 40px}
+    .speak-badge{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:var(--gold2);border:1px solid rgba(245,166,35,.2);padding:5px 12px;border-radius:100px;display:inline-block;margin-bottom:14px;width:fit-content}
+    .speak-title{font-family:var(--syne);font-size:clamp(18px,2.4vw,28px);font-weight:800;color:var(--txt);margin-bottom:6px;line-height:1.2;max-width:620px}
+    .speak-event{font-size:14px;color:var(--txt2);margin-bottom:18px}
+    .speak-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .speak-tag{font-size:12px;color:var(--txt2);background:rgba(7,9,15,.6);border:1px solid var(--bdr2);padding:5px 14px;border-radius:100px;backdrop-filter:blur(4px)}
+    .speak-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .speak-card-sm{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;overflow:hidden}
+    .speak-img-sm{width:100%;height:160px;object-fit:cover;object-position:center 20%;filter:brightness(.7)}
+    .speak-card-sm-body{padding:16px}
+    .speak-sm-label{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:6px}
+    .speak-sm-title{font-family:var(--syne);font-size:13px;font-weight:700;color:var(--txt);line-height:1.35}
+
+    /* SKILLS */
+    .skills-bg{background:var(--bg1);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .skill-group{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:22px}
+    .sg-title{font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .sg-title::before{content:'';flex:1;height:1px;background:var(--bdr)}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .stag{font-size:12px;color:var(--txt);background:var(--bg3);border:1px solid var(--bdr);padding:5px 12px;border-radius:6px;transition:border-color .18s,color .18s}
+    .stag:hover{border-color:var(--cyan);color:var(--cyan)}
+
+    /* CONTACT */
+    .contact-bg{background:var(--bg0)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .contact-h2{font-family:var(--syne);font-size:clamp(34px,4.5vw,52px);font-weight:800;line-height:1.08;color:var(--txt);margin-bottom:14px}
+    .contact-h2 span{color:var(--cyan)}
+    .contact-sub{font-size:15px;font-weight:300;line-height:1.8;color:var(--txt2);margin-bottom:32px}
+    .clink{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:10px;transition:border-color .2s,transform .2s,box-shadow .2s}
+    .clink:hover{border-color:var(--cyan);transform:translateX(4px);box-shadow:0 4px 20px rgba(0,200,255,.07)}
+    .clink-ic{width:36px;height:36px;border-radius:8px;background:var(--bg3);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+    .clink-info{flex:1}
+    .clink-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3);margin-bottom:2px}
+    .clink-val{font-size:14px;color:var(--txt)}
+    .info-box{display:flex;flex-direction:column;gap:12px}
+    .ibox{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 20px}
+    .ibox-lbl{font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);margin-bottom:5px}
+    .ibox-val{font-family:var(--syne);font-size:16px;font-weight:700;color:var(--txt)}
+    .ibox-sub{font-size:12px;color:var(--txt2);margin-top:3px}
+
+    footer{border-top:1px solid var(--bdr);padding:22px 48px;display:flex;align-items:center;justify-content:space-between;background:var(--bg0)}
+    .foot-left{display:flex;align-items:center;gap:14px}
+    .foot-logo img{height:24px;filter:brightness(0) invert(1);opacity:.45}
+    .foot-copy{font-size:12px;color:var(--txt3)}
+    .foot-links{display:flex;gap:20px}
+    .foot-link{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--txt3);transition:color .18s}
+    .foot-link:hover{color:var(--cyan)}
+    .disclaimer{background:var(--bg0);border-top:1px solid var(--bdr);padding:18px 48px;font-size:11px;color:var(--txt3);line-height:1.7;text-align:center}
+
+    @media(max-width:960px){
+      nav{padding:0 20px}
+      .nav-links,.nav-cta{display:none}
+      .hamburger{display:flex}
+      .hero{grid-template-columns:1fr;padding:56px 20px 72px;gap:40px}
+      .hero-stats{flex-wrap:wrap;gap:20px}
+      .section{padding:72px 20px}
+      .shipped-grid{grid-template-columns:1fr 1fr}
+      .metrics-row{grid-template-columns:1fr 1fr}
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .about-left{position:static}
+      .case-grid{grid-template-columns:1fr}
+      .case-card.featured{grid-row:auto}
+      .speak-cards{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr;gap:48px}
+      footer{flex-direction:column;gap:14px;text-align:center;padding:20px}
+    }
+    @media(max-width:600px){
+      .hero-h1{font-size:36px}
+      .hero-btns{flex-direction:column}
+      .btn-primary,.btn-ghost{width:100%;justify-content:center}
+      .shipped-grid{grid-template-columns:1fr}
+      .metrics-row{grid-template-columns:1fr 1fr}
+      .sec-head{flex-direction:column;align-items:flex-start;gap:14px}
+      .chapter{grid-template-columns:50px 1fr;gap:14px}
+      .ch-num{font-size:28px}
+      .speak-photo{height:260px}
+      .speak-overlay{padding:24px 22px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="logo.png" alt="JJ Park" /></a>
+  <ul class="nav-links">
+    <li><a href="#shipped">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="#shipped"  onclick="closeMob()">Work</a>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#cases"    onclick="closeMob()">Case Studies</a>
+  <a href="#speaking" onclick="closeMob()">Speaking</a>
+  <a href="#contact"  onclick="closeMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-r"></div>
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span>Open to Sr. PMM &amp; Brand Manager Roles</div>
+      <h1 class="hero-h1">AAA Game<br><span class="ac">Marketer.</span><br>Game <span class="ag">Builder.</span></h1>
+      <p class="hero-subhead">10+ launches. 3M+ users. Two continents.</p>
+      <p class="hero-desc">6+ years driving global campaigns at <strong>2K Games</strong> (Civilization, NBA 2K, LEGO 2K Drive) and scaling <strong>Blitz Inc.</strong> from 0 to 3M+ MAUs as Founding VP of Marketing, Korea. Native-fluent in both US and Korean gaming markets. Now building an original indie game.</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">10<span>+</span></div><div class="hstat-l">AAA Titles Shipped</div></div>
+        <div class="hstat"><div class="hstat-n">3M<span>+</span></div><div class="hstat-l">MAUs Scaled</div></div>
+        <div class="hstat"><div class="hstat-n">17</div><div class="hstat-l">Markets Led</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#cases" class="btn-primary">View Case Studies</a>
+        <a href="#about" class="btn-ghost">My Story <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="hcard-top">
+          <div class="hcard-badge">Most Recent Role</div>
+          <div class="hcard-title">Product Marketing Manager</div>
+          <div class="hcard-role">2K Games (Take-Two Interactive) · 2022 – 2025</div>
+        </div>
+        <div class="hcard-body">
+          <div class="hcard-games">
+            <div class="hgame">
+              <div class="hgame-dot" style="background:#F5A623"></div>
+              <div class="hgame-info"><div class="hgame-name">Civilization: Eras &amp; Allies</div><div class="hgame-role">Mobile — Global GTM &amp; APAC</div></div>
+              <div class="hgame-tag">PMM</div>
+            </div>
+            <div class="hgame">
+              <div class="hgame-dot" style="background:#7C3AED"></div>
+              <div class="hgame-info"><div class="hgame-name">NBA 2K</div><div class="hgame-role">Franchise — Seasonal Campaigns</div></div>
+              <div class="hgame-tag">PMM</div>
+            </div>
+            <div class="hgame">
+              <div class="hgame-dot" style="background:#00C8FF"></div>
+              <div class="hgame-info"><div class="hgame-name">LEGO 2K Drive</div><div class="hgame-role">New IP — Launch Marketing</div></div>
+              <div class="hgame-tag">PMM</div>
+            </div>
+          </div>
+        </div>
+        <div class="hcard-metric-row">
+          <div class="hm"><div class="hm-n">10<span style="font-size:14px">+</span></div><div class="hm-l">AAA Titles</div></div>
+          <div class="hm"><div class="hm-n">17</div><div class="hm-l">Markets</div></div>
+          <div class="hm"><div class="hm-n">3M<span style="font-size:14px">+</span></div><div class="hm-l">MAUs Built</div></div>
+        </div>
+        <div class="hcard-footer">
+          <span class="hf-label">GamesForum SF 2025 · Speaker</span>
+          <span class="hf-open">Open to Work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="t-item">Civilization: Eras &amp; Allies</span><span class="t-item">NBA 2K</span><span class="t-item">LEGO 2K Drive</span><span class="t-item">Blitz Inc. — 3M+ MAUs</span><span class="t-item">GamesForum SF 2025 Speaker</span><span class="t-item">EN / KR Bilingual</span><span class="t-item">17 Markets</span><span class="t-item">US Army Veteran</span><span class="t-item">Super Speedrun Founder</span><span class="t-item">Sr. PMM · Open to Work</span><span class="t-item">Civilization: Eras &amp; Allies</span><span class="t-item">NBA 2K</span><span class="t-item">LEGO 2K Drive</span><span class="t-item">Blitz Inc. — 3M+ MAUs</span><span class="t-item">GamesForum SF 2025 Speaker</span><span class="t-item">EN / KR Bilingual</span><span class="t-item">17 Markets</span><span class="t-item">US Army Veteran</span><span class="t-item">Super Speedrun Founder</span><span class="t-item">Sr. PMM · Open to Work</span>
+  </div>
+</div>
+
+<!-- GAMES SHIPPED -->
+<div class="shipped-bg" id="shipped">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div><div class="sec-label">01 / Portfolio</div><h2 class="sec-h2">Titles I've <em>Marketed &amp; Built</em></h2></div>
+    </div>
+    <div class="shipped-grid">
+      <div class="game-tile reveal">
+        <div class="game-vis"><div class="gv-civ"><div class="gvis-title">CIVILIZATION<br>ERAS &amp; ALLIES</div></div></div>
+        <div class="game-body"><div class="game-title">Civilization: Eras &amp; Allies</div><div class="game-meta">2K Games · Console / PC / Mobile · 2022–2025</div><span class="game-role-tag tag-pmm">Product Marketing Manager</span></div>
+      </div>
+      <div class="game-tile reveal reveal-d1">
+        <div class="game-vis"><div class="gv-nba"><div class="gvis-title">NBA 2K<br>FRANCHISE</div></div></div>
+        <div class="game-body"><div class="game-title">NBA 2K</div><div class="game-meta">2K Games · Console / PC · 2022–2025</div><span class="game-role-tag tag-pmm">Product Marketing Manager</span></div>
+      </div>
+      <div class="game-tile reveal reveal-d2">
+        <div class="game-vis"><div class="gv-ms"><div class="gvis-title">LEGO 2K<br>DRIVE</div></div></div>
+        <div class="game-body"><div class="game-title">LEGO 2K Drive</div><div class="game-meta">2K Games · Console / PC · 2022–2025</div><span class="game-role-tag tag-pmm">Product Marketing Manager</span></div>
+      </div>
+      <div class="game-tile reveal reveal-d1">
+        <div class="game-vis"><div class="gv-blitz"><div class="gvis-title" style="color:rgba(0,200,100,.6)">BLITZ INC.<br>GAMING ANALYTICS</div></div></div>
+        <div class="game-body"><div class="game-title">Blitz Inc. — AI Gaming Analytics</div><div class="game-meta">Blitz Inc. · 0 to 3M+ MAUs · 2019–2022</div><span class="game-role-tag tag-vp">Founding VP of Marketing, Korea</span></div>
+      </div>
+      <div class="game-tile reveal reveal-d2">
+        <div class="game-vis"><div class="gv-ss"><div class="gvis-title" style="color:rgba(255,100,150,.6)">SUPER SPEEDRUN<br>CHARITY MARATHON</div></div></div>
+        <div class="game-body"><div class="game-title">Super Speedrun</div><div class="game-meta">Korea's First Gaming Marathon · 7M+ Views · 2021–Present</div><span class="game-role-tag tag-vp">Co-Founder</span></div>
+      </div>
+      <div class="game-tile reveal reveal-d3">
+        <div class="game-vis"><div class="gv-sz"><div class="gvis-title" style="color:rgba(0,200,255,.65)">SUBSCRIBER ZERO<br><span style="color:rgba(255,255,255,.3);font-size:9px">IN DEVELOPMENT</span></div></div></div>
+        <div class="game-body"><div class="game-title">Subscriber Zero</div><div class="game-meta">Independent Project · Deckbuilder · 2026</div><span class="game-role-tag tag-founder">Designer + Developer</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics-bg">
+  <div style="max-width:1240px;margin:0 auto;padding:0 48px">
+    <div class="metrics-row">
+      <div class="metric-box reveal">
+        <div class="metric-n">3M<span>+</span></div>
+        <div class="metric-l">MAUs scaled at Blitz Inc. — an AI gaming analytics platform</div>
+        <div class="metric-src">Founding VP of Marketing, Korea · 2019–2022</div>
+      </div>
+      <div class="metric-box reveal reveal-d1">
+        <div class="metric-n">2M<span>+</span></div>
+        <div class="metric-l">Pre-registrations driven for Civilization: Eras &amp; Allies Korea launch</div>
+        <div class="metric-src">2K Games · Celebrity campaign featuring actor Park Hae-il</div>
+      </div>
+      <div class="metric-box reveal reveal-d2">
+        <div class="metric-n">200<span>+</span></div>
+        <div class="metric-l">Creative assets produced across 20+ UA channels — measurable double-digit CTR and cost efficiency gains</div>
+        <div class="metric-src">2K Games</div>
+      </div>
+      <div class="metric-box reveal reveal-d1">
+        <div class="metric-n">1.5M<span>+</span></div>
+        <div class="metric-l">Fans reached via first-of-its-kind Civilization franchise orchestra hybrid campaign</div>
+        <div class="metric-src">2K Games · Civilization Symphony · National Theater of Korea</div>
+      </div>
+      <div class="metric-box reveal reveal-d2">
+        <div class="metric-n">7M<span>+</span></div>
+        <div class="metric-l">Views generated for Super Speedrun — Korea's first gaming marathon charity event</div>
+        <div class="metric-src">Co-Founder · 2021–Present</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-bg" id="about">
+  <div class="section">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="about-photo">
+          <img src="headshot.JPG" alt="JJ Park" onerror="this.style.display='none'" />
+        </div>
+        <div class="sec-label" style="margin-bottom:8px">02 / About</div>
+        <h2 class="about-h2">JJ Park</h2>
+        <p class="about-role">Sr. PMM · Chicago, IL · Open to Relocation</p>
+        <div class="key-stats">
+          <div class="kstat"><div class="kstat-n">10<span>+</span></div><div class="kstat-l">Titles Shipped</div></div>
+          <div class="kstat"><div class="kstat-n">6<span>+</span></div><div class="kstat-l">Years Exp.</div></div>
+          <div class="kstat"><div class="kstat-n">17</div><div class="kstat-l">Markets Led</div></div>
+          <div class="kstat"><div class="kstat-n">2</div><div class="kstat-l">Languages</div></div>
+        </div>
+      </div>
+      <div class="chapters">
+        <div class="chapter reveal">
+          <div class="ch-num">01</div>
+          <div>
+            <div class="ch-period">2017 – 2019</div>
+            <div class="ch-title">Foundation — Republic of Korea Army &amp; US Army</div>
+            <p class="ch-desc">Served as Army Sergeant in a Korea-US joint program at Camp Humphreys, building <strong>cross-cultural fluency and mission-first discipline.</strong> Coordinating bilingual teams under pressure with zero-tolerance for error — a mindset that transferred directly into managing AAA campaign timelines and multi-agency global launches.</p>
+            <div class="ch-metrics"><span class="ch-tag">Korea-US Bilateral</span><span class="ch-tag">Leadership</span></div>
+          </div>
+        </div>
+        <div class="chapter reveal">
+          <div class="ch-num">02</div>
+          <div>
+            <div class="ch-period">2019 – 2022</div>
+            <div class="ch-title">Scale &amp; Korean Market — Blitz Inc. + Bada Games</div>
+            <p class="ch-desc">As <strong>Founding VP of Marketing, Korea</strong> at Blitz Inc. (AI-powered gaming analytics platform), scaled the product from <strong>0 to 3M+ MAUs</strong> in three years — contributing to the CEO's Forbes 30 Under 30 recognition. Built a <strong>35-member in-house localization team across 17 markets,</strong> replacing expensive vendor pipelines with machine translation and human QA. Launched subscription monetization model, improving trial-to-paid conversion and retention. Concurrently led localization product at Bada Games, partnering with Korean publishers including Nexon and CJ E&amp;M.</p>
+            <div class="ch-metrics"><span class="ch-tag-g">3M+ MAUs</span><span class="ch-tag-g">Forbes 30U30 Company</span><span class="ch-tag">17 Markets</span><span class="ch-tag">35-Person Team Built</span></div>
+          </div>
+        </div>
+        <div class="chapter reveal">
+          <div class="ch-num">03</div>
+          <div>
+            <div class="ch-period">2022 – 2025</div>
+            <div class="ch-title">AAA Execution — 2K Games (Take-Two Interactive)</div>
+            <p class="ch-desc">Product Marketing Manager across three of gaming's most iconic franchises — leading integrated campaigns that combined digital, offline, live events, and celebrity partnerships across Korea and APAC.</p>
+            <p class="ch-desc" style="margin-top:12px">For <strong>Civilization: Eras &amp; Allies</strong>, led the full Korea launch campaign culminating in <strong>#1 in the Strategy category (Free Games) on the Korea App Store at launch (June 2025)</strong>. Headlined a <strong>Korean celebrity campaign featuring actor Park Hae-il</strong> (Cannes-recognized), producing the cinematic "EP.1: The Arrival of Admiral Yi Sun-sin" — driving <strong>2M+ pre-registrations</strong>. Produced and executed a <strong>Starfield x Civilization popup store</strong> (Starfield Suwon and Hanam) that generated 180K+ views on launch recap video. Conceptualized and produced the <strong>Civilization Symphony 2023</strong> at the National Theater of Korea — the first Civilization-dedicated live concert in Korea, featuring Grammy-winning "Baba Yetu" performed by full orchestra and choir for 500 attendees.</p>
+            <p class="ch-desc" style="margin-top:12px">Separately led GTM for <strong>NBA 2K</strong> seasonal campaigns and <strong>LEGO 2K Drive</strong> new IP launch. Partnered with Sony for APAC platform-level activations. Managed 4 agencies to deliver <strong>200+ creatives across 20+ UA channels,</strong> achieving measurable double-digit improvements in CTR and cost efficiency. Speaker at <strong>GamesForum San Francisco 2025.</strong></p>
+            <div class="ch-metrics"><span class="ch-tag-g">Korea App Store #1 · Strategy (Free, June 2025)</span><span class="ch-tag-g">2M+ Pre-Registrations</span><span class="ch-tag-g">1.5M+ Concert Reach</span><span class="ch-tag">Starfield Popup</span><span class="ch-tag">Celebrity Campaign</span><span class="ch-tag">200+ Creatives</span><span class="ch-tag">GamesForum Speaker</span></div>
+          </div>
+        </div>
+        <div class="chapter reveal">
+          <div class="ch-num">04</div>
+          <div>
+            <div class="ch-period">2026 – Present</div>
+            <div class="ch-title">Full-Stack Evolution — Independent Game Development</div>
+            <p class="ch-desc">Currently building <strong>Subscriber Zero</strong> — a Korean streaming-culture-themed deckbuilding roguelike designed and developed by me, using AI-assisted workflows (Godot 4 + Claude + Cursor). 3 playable characters, 5 zones, 200+ cards. Every product and business decision documented publicly as a case study. This is what it looks like when a PMM ships their own product.</p>
+            <div class="ch-metrics"><span class="ch-tag">Godot 4</span><span class="ch-tag">AI-Native Dev</span><span class="ch-tag">Steam GTM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="cases-bg" id="cases">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div><div class="sec-label">03 / Case Studies</div><h2 class="sec-h2">Selected <em>Work</em></h2></div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card featured reveal" style="cursor:default">
+        <div class="case-vis" style="position:relative;overflow:hidden;background:#050D1F">
+          <img src="aurora_mech.png" alt="Subscriber Zero — AURORA character and mech concept art" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;filter:brightness(.9)" onerror="this.style.display='none'" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(5,13,31,.85) 100%)"></div>
+          <div style="position:absolute;bottom:16px;left:20px">
+            <div style="font-family:var(--syne);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px">Subscriber Zero</div>
+            <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)">AURORA — Character Concept Art</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-meta"><span class="case-type">Designer / Developer</span><span class="case-sep"></span><span class="case-date">2026 · In Progress</span></div>
+          <h3 class="case-h3">Building a deckbuilding roguelike from scratch — and marketing it before it ships</h3>
+          <p class="case-desc">A Korean streaming-culture-themed roguelike designed and developed by me, built with AI workflows (Godot 4 + Claude + Cursor). 3 characters, 5 zones, 200+ cards. Every decision documented as a product case study: genre selection based on market analysis, positioning, Steam page GTM strategy, wishlist-building plan, community structure, and trailer roadmap. This project reflects how I approach product design, positioning, and GTM as a PMM building an original game.</p>
+          <div class="case-footer"><div class="case-tags"><span class="ctag">Product Design</span><span class="ctag">GTM</span><span class="ctag">Steam</span><span class="ctag">AI-Native</span></div><div style="font-size:11px;color:var(--txt3);letter-spacing:.06em">In Development</div></div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-vis" style="height:150px"><div class="cv-nda"><div class="cv-nda-inner"><div style="font-size:22px;opacity:.35;margin-bottom:8px">🎮</div><div class="cv-nda-t">2K Games · 2022–2025</div></div></div></div>
+        <div class="case-body">
+          <div class="case-meta"><span class="case-type">AAA Launch</span><span class="case-sep"></span><span class="case-date">2K Games · Seoul, Korea</span></div>
+          <h3 class="case-h3">Integrated Launch Campaign — Civilization: Eras &amp; Allies</h3>
+          <p class="case-desc">Full-funnel Korea GTM from pre-registration to #1 in Strategy (Free Games) on the Korea App Store at launch (June 2025). Celebrity campaign featuring actor Park Hae-il (Cannes-recognized) with 2M+ pre-regs, Starfield offline popup activation (Suwon + Hanam), Civilization Symphony at National Theater of Korea, Sony APAC platform partnership, and 200+ creatives across 20+ UA channels. Specific performance metrics are confidential to 2K Games.</p>
+          <div class="case-footer"><div class="case-tags"><span class="ctag">App Store #1</span><span class="ctag">Celebrity</span><span class="ctag">Offline Activation</span><span class="ctag">APAC</span></div><div class="arr"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        </div>
+      </div>
+      <a href="#contact" class="case-card reveal">
+        <div class="case-vis" style="height:150px"><div class="cv-blitz"><div class="cv-blitz-t">Blitz Inc. · 0 → 3M+ MAUs</div></div></div>
+        <div class="case-body">
+          <div class="case-meta"><span class="case-type">Growth / Localization</span><span class="case-sep"></span><span class="case-date">Blitz Inc. · 2019–2022</span></div>
+          <h3 class="case-h3">Scaling an AI gaming platform from 0 to 3M+ MAUs across 17 markets</h3>
+          <p class="case-desc">Built 35-person in-house localization team replacing costly vendors, launched influencer strategy driving rapid user growth at launch, and designed subscription pricing that meaningfully improved trial-to-paid conversion. Contributed to Forbes 30 Under 30 recognition for the CEO.</p>
+          <div class="case-footer"><div class="case-tags"><span class="ctag">Growth</span><span class="ctag">Localization</span><span class="ctag">17 Markets</span><span class="ctag">Monetization</span></div><div class="arr"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SZ DEV GALLERY -->
+    <div class="sz-gallery reveal" style="margin-top:20px">
+      <div class="sz-gal-label">Subscriber Zero — In Development</div>
+      <div class="sz-gal-grid">
+        <div class="sz-gal-item">
+          <img src="aurora_portrait.png" alt="AURORA character portrait — Subscriber Zero concept art" />
+          <div class="sz-gal-cap">Character Design · AURORA</div>
+        </div>
+        <div class="sz-gal-item">
+          <img src="card_concept.png" alt="Subscriber Zero card system — Figma design mockup" />
+          <div class="sz-gal-cap">Card System · 27 Cards · Korean UI</div>
+        </div>
+        <div class="sz-gal-item">
+          <img src="concept_artworks.png" alt="Subscriber Zero character A/B concept testing in Figma — Midjourney" />
+          <div class="sz-gal-cap">Design Process · Figma A/B Concept Testing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="speaking-bg" id="speaking">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div><div class="sec-label">04 / Speaking</div><h2 class="sec-h2">On the <em>Stage</em></h2></div>
+    </div>
+    <div class="speak-main reveal">
+      <img src="thumbnail.jpg" alt="JJ Park speaking at GamesForum San Francisco 2025 — Marriott Marquis" class="speak-photo" onerror="this.style.display='none';this.nextElementSibling.style.background='linear-gradient(135deg,#050D1F,#0D2050)'" />
+      <div class="speak-overlay">
+        <div class="speak-badge">GamesForum San Francisco · October 2025</div>
+        <div class="speak-title">"From Seoul to San Francisco: Rewriting UA Through Korea's Lens"</div>
+        <div class="speak-event">Marriott Marquis San Francisco · Wednesday, October 22 · 4:00 PM</div>
+        <div class="speak-tags">
+          <span class="speak-tag">User Acquisition</span>
+          <span class="speak-tag">Korean Market</span>
+          <span class="speak-tag">Global Rollout Strategy</span>
+          <span class="speak-tag">Cross-Cultural Marketing</span>
+        </div>
+        <a href="https://www.youtube.com/watch?v=Tb5pcW2wlnE" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--syne);font-size:12px;font-weight:700;letter-spacing:.06em;padding:9px 18px;border-radius:6px;backdrop-filter:blur(6px);transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Full Session on YouTube
+        </a>
+      </div>
+    </div>
+    <div class="speak-cards">
+      <div class="speak-card-sm reveal">
+        <img src="thumbnail_edit_1.png" alt="JJ Park at podium, GamesForum San Francisco 2025" class="speak-img-sm" onerror="this.style.height='80px';this.style.background='var(--bg3)';this.style.display='block'" />
+        <div class="speak-card-sm-body">
+          <div class="speak-sm-label">Session · Slide 15</div>
+          <div class="speak-sm-title">"How do you take one title and make it resonate in markets that live by opposite rhythms?"</div>
+        </div>
+      </div>
+      <div class="speak-card-sm reveal reveal-d1">
+        <div style="height:160px;background:linear-gradient(135deg,#050D24,#0A1840);display:flex;align-items:center;justify-content:center;padding:24px">
+          <div style="text-align:center">
+            <div style="font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3);margin-bottom:10px">Session Structure</div>
+            <div style="font-size:12px;color:var(--txt2);line-height:2">Intro · What Makes Korea Unpredictable<br>Real Campaign Lessons · Reusable Frameworks · Closing</div>
+          </div>
+        </div>
+        <div class="speak-card-sm-body">
+          <div class="speak-sm-label">Talk Theme</div>
+          <div class="speak-sm-title">The Global Rollout Problem: bridging US and Korean campaign strategy using real-world AAA campaign experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="skills-bg" id="skills">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div><div class="sec-label">05 / Skills &amp; Tools</div><h2 class="sec-h2">What I <em>Bring</em></h2></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="sg-title">Marketing Strategy</div>
+        <div class="skill-tags"><span class="stag">GTM Strategy</span><span class="stag">Product Positioning</span><span class="stag">Messaging Frameworks</span><span class="stag">Competitive Analysis</span><span class="stag">Player Segmentation</span><span class="stag">Live-Ops Marketing</span><span class="stag">Campaign Management</span><span class="stag">Brand Partnerships</span><span class="stag">Franchise Marketing</span></div>
+      </div>
+      <div class="skill-group reveal reveal-d1">
+        <div class="sg-title">Channels &amp; Growth</div>
+        <div class="skill-tags"><span class="stag">Performance / UA</span><span class="stag">Influencer / Creator</span><span class="stag">Storefront Optimization</span><span class="stag">Community Building</span><span class="stag">PR &amp; Media</span><span class="stag">Paid Social (Meta / Google)</span><span class="stag">Korean Localization</span><span class="stag">Localization Ops (17 mkt)</span></div>
+      </div>
+      <div class="skill-group reveal reveal-d2">
+        <div class="sg-title">Tools &amp; Platforms</div>
+        <div class="skill-tags"><span class="stag">Google Ads · Meta Ads</span><span class="stag">Moloco · AppsFlyer</span><span class="stag">Adjust · Firebase</span><span class="stag">Tableau · SQL</span><span class="stag">Sensor Tower · Data.ai</span><span class="stag">Adobe Suite · Figma</span><span class="stag">Godot 4</span><span class="stag">Claude / LLM Workflows</span><span class="stag">Cursor</span><span class="stag">Steamworks</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-bg" id="contact">
+  <div class="section">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="sec-label" style="margin-bottom:12px">06 / Contact</div>
+        <h2 class="contact-h2">Let's work<br><span>together.</span></h2>
+        <p class="contact-sub">Hiring a Sr. PMM or Brand Manager? Interested in the Korean gaming market? Want to discuss a collaboration? I'd like to hear from you.</p>
+        <a href="mailto:jaejunpark0314@gmail.com" class="clink">
+          <div class="clink-ic">✉</div>
+          <div class="clink-info"><div class="clink-lbl">Email</div><div class="clink-val">jaejunpark0314@gmail.com</div></div>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/jjpark1" target="_blank" class="clink">
+          <div class="clink-ic" style="font-family:var(--syne);font-weight:800;font-size:13px;color:var(--cyan)">in</div>
+          <div class="clink-info"><div class="clink-lbl">LinkedIn</div><div class="clink-val">linkedin.com/in/jjpark1</div></div>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="info-box reveal reveal-d1">
+        <div class="ibox"><div class="ibox-lbl">Location</div><div class="ibox-val">Illinois, United States</div><div class="ibox-sub">Chicago area · Open to Relocation</div></div>
+        <div class="ibox"><div class="ibox-lbl">Open To</div><div class="ibox-val">Sr. PMM · Brand Manager/Director</div><div class="ibox-sub">Game studios · AAA &amp; indie · US or remote</div></div>
+        <div class="ibox"><div class="ibox-lbl">Currently Building</div><div class="ibox-val">Subscriber Zero</div><div class="ibox-sub">Deckbuilding roguelike · Godot 4 · In Development</div></div>
+        <div class="ibox"><div class="ibox-lbl">Languages</div><div class="ibox-val">English · Korean</div><div class="ibox-sub">Native fluency in both · MS Azure Certified · Google Ads Certified</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-left">
+    <div class="foot-logo"><img src="logo.png" alt="JJ Park" /></div>
+    <div class="foot-copy">© 2026 JJ Park · jaejunpark.com</div>
+    <div style="font-size:10px;color:var(--txt3);margin-top:6px">Personal portfolio of JJ Park. All views are my own.</div>
+  </div>
+  <div class="foot-links">
+    <a href="#shipped" class="foot-link">Work</a>
+    <a href="#about"   class="foot-link">About</a>
+    <a href="#cases"   class="foot-link">Cases</a>
+    <a href="#contact" class="foot-link">Contact</a>
+    <a href="#legal-terms"   class="foot-link" style="color:var(--txt3)">Terms</a>
+    <a href="#legal-privacy" class="foot-link" style="color:var(--txt3)">Privacy</a>
+  </div>
+</footer>
+
+<!-- TRADEMARK DISCLAIMER -->
+<div class="disclaimer">
+  All company names, game titles, and trademarks referenced on this site (including 2K Games, Take-Two Interactive, NBA 2K, Civilization, LEGO 2K Drive, LEGO Group, Starfield (Shinsegae Group), Blitz Inc., Sony, Nexon, CJ E&amp;M, GamesForum, Forbes, GRAMMY [National Academy of Recording Arts &amp; Sciences]) are the property of their respective owners. References are made solely to describe JJ Park's professional experience while employed at the respective companies and are not intended to imply endorsement, sponsorship, or affiliation. Certain figures cited are approximate and shared to illustrate scope of work; they are based on JJ Park's firsthand professional involvement and do not represent official statements by any employer.
+</div>
+
+<!-- TERMS OF USE -->
+<div style="background:var(--bg1);border-top:1px solid var(--bdr);width:100%">
+  <div id="legal-terms" style="max-width:1240px;margin:0 auto;padding:40px 48px;font-size:12px;color:var(--txt3);line-height:1.9">
+    <div style="font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);margin-bottom:18px">Terms of Use — jaejunpark.com</div>
+    <p>This website (jaejunpark.com) is the personal portfolio of JJ Park ("I," "me," "my"). By accessing this site, you agree to the following terms.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Purpose.</strong> This site is provided for informational purposes only to showcase my professional experience and personal projects. It does not constitute an offer of employment, services, or any commercial transaction.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">No warranties.</strong> All content is provided "as is" without warranties of any kind, express or implied, including accuracy, completeness, or fitness for a particular purpose. I make no representations that the information is current or error-free.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Limitation of liability.</strong> To the fullest extent permitted by applicable law, I shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of or inability to use this site.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Intellectual property.</strong> Original written content, design, and code on this site are © 2026 JJ Park. All rights reserved. Third-party trademarks, brand names, and game titles referenced remain the property of their respective owners. No license to use any third-party intellectual property is granted by this site.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Prior work and personal projects.</strong> Visual concepts and art materials for Subscriber Zero were created using AI-assisted workflows under my direction, including prompt design, iteration, and selection. Any references to prior campaign work are included only to describe my role and experience. Proprietary internal materials are not reproduced on this site.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">External links.</strong> Links to third-party sites (LinkedIn, GitHub, YouTube) are provided for convenience only. I have no control over their content and accept no responsibility for them.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Governing law.</strong> These terms are governed by the laws of the State of Illinois, to the extent applicable.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Changes.</strong> I reserve the right to update these terms at any time without prior notice. Continued use of the site constitutes acceptance of any revised terms.</p>
+    <p style="margin-top:12px;color:var(--txt3)">Last updated: March 2026</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div style="background:var(--bg0);border-top:1px solid var(--bdr);width:100%">
+  <div id="legal-privacy" style="max-width:1240px;margin:0 auto;padding:40px 48px;font-size:12px;color:var(--txt3);line-height:1.9">
+    <div style="font-family:var(--syne);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);margin-bottom:18px">Privacy Policy — jaejunpark.com</div>
+    <p><strong style="color:var(--txt2)">Controller.</strong> JJ Park, Illinois, USA. Contact: jaejunpark0314@gmail.com</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">What I collect.</strong> This site does not use cookies, analytics platforms, or tracking pixels. I do not actively collect personal data from visitors. If you contact me via email or phone, I receive your contact information solely to respond to your inquiry and for no other purpose.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Third-party data transfers (Google Fonts).</strong> This site loads web fonts from the Google Fonts API (fonts.googleapis.com, fonts.gstatic.com). When your browser requests these font files, your IP address and browser information are automatically transmitted to Google LLC servers located in the United States. This is standard web font delivery behavior. If you wish to prevent this, you may use a browser extension that blocks external font requests.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Retention.</strong> Contact inquiries received by email are retained only as long as necessary to respond and are deleted thereafter. I do not sell or intentionally share inquiry data for marketing purposes. Limited processing by service providers such as email or hosting providers may occur as necessary to operate this site.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Infrastructure providers.</strong> This site is hosted through third-party infrastructure providers (such as domain and hosting providers). These providers may process limited technical data such as IP addresses or server request logs as part of normal internet operations. This is standard for all websites and is outside my direct control.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Your rights.</strong> Depending on your jurisdiction, you may have the right to access, correct, or request deletion of any personal data I hold about you. To exercise any of these rights, contact me at jaejunpark0314@gmail.com.</p>
+    <p style="margin-top:12px"><strong style="color:var(--txt2)">Korean residents (개인정보 보호법).</strong> 본 사이트(jaejunpark.com)는 방문자의 개인정보를 적극적으로 수집하지 않습니다. 다만 Google Fonts 리소스 로딩 과정에서 귀하의 IP 주소가 미국 소재 Google LLC 서버로 자동 전송될 수 있습니다. 이메일 또는 전화로 문의하신 경우, 해당 연락처는 답변 목적으로만 사용되며 답변 완료 후 파기됩니다. 마케팅 목적으로 제3자에게 제공되지 않으나, 사이트 운영에 필요한 범위에서 이메일·호스팅 서비스 제공자가 제한적으로 처리할 수 있습니다. 개인정보 관련 문의: jaejunpark0314@gmail.com</p>
+    <p style="margin-top:12px;color:var(--txt3)">Effective date: March 2026</p>
+  </div>
+</div>
+
+<script>
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  function closeMob() { mob.classList.remove('open'); }
+
+  const revealEls = document.querySelectorAll('.reveal');
+
+  // IntersectionObserver: 뷰포트 진입 시 애니메이션
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+
+  // 폴백: 800ms 후에도 보이지 않는 요소 강제 표시 (프리뷰/로컬 환경 대응)
+  setTimeout(() => {
+    revealEls.forEach(el => el.classList.add('vis'));
+  }, 800);
+</script>
+</body>
+</html>
